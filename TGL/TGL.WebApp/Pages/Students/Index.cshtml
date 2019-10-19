@@ -1,0 +1,32 @@
+﻿@page
+@model TGL.WebApp.Pages.Students.IndexModel
+@{
+}
+
+    <h1>Students</h1>
+    <table>
+        <thead>
+            <tr>
+                <!--th>Id</!--th>-->
+                <th>Nit</th>
+                <th>Name</th>
+                <th>LastName</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Students)
+            {
+            <tr>
+
+                <!--td>@item.Id</!--td>-->
+                <td>@item.Nit</td>
+                <td>@item.Name</td>
+                <td>@item.LastName</td>
+                <td>@item.Age</td>
+
+
+            </tr>
+                }
+        </tbody>
+    </table>
