@@ -43,6 +43,12 @@ namespace TGL.WebApp.Data
             });
         }
 
+        internal void DeleteStudent(Guid id)
+        {
+            var student = Students.FirstOrDefault(x => x.Id == id);
+            Students.Remove(student);
+        }
+
         public List<Student> GetStudents()
         {
             return this.Students;

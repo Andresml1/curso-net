@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Collections.Generic;
 using TGL.WebApp.Data;
 using TGL.WebApp.Models;
@@ -15,6 +17,12 @@ namespace TGL.WebApp.Pages.Students
             StudentStore = studentStore;
             Students = StudentStore.GetStudents();
 
+        }
+
+        public IActionResult OnPostDelete(Guid id)
+        {
+            StudentStore.DeleteStudent(id);
+            return RedirectToPage();
         }
         public void OnGet()
         {
