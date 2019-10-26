@@ -1,0 +1,46 @@
+﻿@page
+@model TGL.WebApp.Pages.Students.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<div class="row">
+    <form class="col s12" method="post">
+        <input hidden asp-for="Student.Id" />
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="nit"  class="validate" asp-for="Student.Nit">
+                <label for="nit"> Nit</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="name"  class="validate" asp-for="Student.Name">
+                <label for="name">Name</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="lastName"  class="validate" asp-for="Student.LastName">
+                <label for="lastName">lastName</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="age"  class="validate" asp-for="Student.Age">
+                <label for="age">Age</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <button type="submit" class="waves-effect waves-light btn" type="submit">Save</button>
+                
+            </div>
+        </div>
+        
+    </form>
+</div>
+
+<a asp-page="./Index" class="waves-effect waves-light btn" type="submit">Return to list</a>

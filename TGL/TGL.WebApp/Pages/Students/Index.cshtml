@@ -7,9 +7,9 @@
     <h1>Students</h1>
 
     <form method="post">
-        <table>
-            <thead>
-                <tr>
+        <table class="highlight">
+            <thead >
+                <tr class="card-panel teal lighten-1">
                     <!--th>Id</!--th>-->
                     <th>Nit</th>
                     <th>Name</th>
@@ -28,11 +28,19 @@
                         <td>@item.LastName</td>
                         <td>@item.Age</td>
                         <td>
-                            <button type="submit" 
+                            <a class="waves-effect waves-light btn"
+                               asp-page="Edit"
+                               asp-route-id="@item.Id">
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn" type="submit"
                                     asp-page-handler="delete"
-                                    asp-route-id="@item.Id" > 
+                                    asp-route-id="@item.Id">
                                 Delete
                             </button>
+                            
                         </td>
 
 
@@ -41,6 +49,5 @@
             </tbody>
         </table>
     </form>
-
-
-    <a asp-page="Add">Create new student</a>
+    <br />
+    <a asp-page="Add" class="waves-effect waves-light btn">Create new student</a>
