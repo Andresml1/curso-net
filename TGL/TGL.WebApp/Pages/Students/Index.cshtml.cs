@@ -24,6 +24,8 @@ namespace TGL.WebApp.Pages.Students
             StudentStore.DeleteStudent(id);
             return RedirectToPage();
         }
+
+       
         public void OnGet()
         {
 

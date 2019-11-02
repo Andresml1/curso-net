@@ -1,0 +1,45 @@
+﻿@page
+@model TGL.WebApp.Pages.Computers.AddModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add Computer</h1>
+
+<div class="row">
+    <form class="col s12" method="post">
+        <input hidden asp-for="StudentId"/>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="Nit" class="validate" asp-for="Computer.Brand">
+                <label for="Nit">Brand</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="name" class="validate" asp-for="Computer.Model">
+                <label for="name">Model</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="lastName" class="validate" asp-for="Computer.Cpu">
+                <label for="lastName">Cpu</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="age" class="validate" asp-for="Computer.Ram">
+                <label for="age">Ram</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <button type="submit" class="waves-effect waves-light btn" type="submit">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<br />
+<a asp-page="./Index" class="waves-effect waves-light btn" type="submit">Return to list</a>

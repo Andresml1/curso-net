@@ -7,23 +7,28 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TGL.WebApp.Data;
 using TGL.WebApp.Models;
 
-namespace TGL.WebApp.Pages.Students
+
+namespace TGL.WebApp.Pages.Computers
 {
     public class AddModel : PageModel
     {
-        public StudentStore StudentStore { get; set; }
-        public AddModel(StudentStore studentStore)
+        public ComputerStore ComputerStore { get; set; }
+        public AddModel(ComputerStore computerStore)
         {
-            StudentStore = studentStore;
+            ComputerStore = computerStore;
         }
 
         [BindProperty] //propierdad de enlace
 
-        public Student Student { get; set; }
-        public void OnGet()
-        {
+        public Computer Computer { get; set; }
 
-        }
+        [BindProperty]
+        public Guid StudentId { get; set; }
+
+        public void OnGet(Guid studentid)
+            {
+                this.StudentId = studentid;
+            }
         public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -31,12 +36,10 @@ namespace TGL.WebApp.Pages.Students
                 return Page();
             }
             //Add
-            StudentStore.AddStudent(Student);
+            Computer.StudentId = StudentId;
+            ComputerStore.AddComputer(Computer);
             return RedirectToPage("./Index");
-
-
-
         }
 
     }
-}  
+}

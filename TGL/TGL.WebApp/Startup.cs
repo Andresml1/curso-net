@@ -27,6 +27,7 @@ namespace TGL.WebApp
         {
             services.AddRazorPages();
             services.AddScoped<StudentStore>();
+            services.AddScoped<ComputerStore>();
             services.AddDbContext<TGLContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("TglSQL")));
         }
 
