@@ -23,6 +23,7 @@ namespace TGL.WebApp.Data
             currentComputer.Cpu = computer.Cpu;
             currentComputer.Ram = computer.Ram;
             currentComputer.Model = computer.Model;
+            currentComputer.StudentId = computer.StudentId;
             Context.Computer.Update(currentComputer);
             Context.SaveChanges();
         }
