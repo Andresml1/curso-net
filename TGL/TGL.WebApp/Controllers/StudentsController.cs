@@ -18,6 +18,7 @@ namespace TGL.WebApp.Controllers
         {
             StudentStore = studentStore;
         }
+       
         // GET: api/<controller>
         [HttpGet]
         public IActionResult Get()
@@ -46,10 +47,16 @@ namespace TGL.WebApp.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, [FromBody]Student student)
         {
+            student.Id = id;
             StudentStore.EditStudent(student);
             return Ok();
         }
 
+        /// <summary>
+        /// metodo para eliminar un estudiante por el identificador
+        /// </summary>
+        /// <param name="id"> identificador del estudiante</param>
+        /// <returns>retorna ok si fue eliminado</returns>
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
