@@ -9,7 +9,7 @@ namespace TGL.WebApp.Data
     public class ComputerStore
     {
         public TGLContext Context { get; set; }
-        public Computer computer { get; set; }
+        //public Computer computer { get; set; }
 
         public ComputerStore(TGLContext context)
         {
@@ -44,7 +44,7 @@ namespace TGL.WebApp.Data
 
         internal void DeleteComputer(Guid id)
         {
-            var student = Context.Student.FirstOrDefault(x => x.Id == id);
+            var computer = Context.Computer.FirstOrDefault(x => x.Id == id);
             Context.Computer.Remove(computer);
             Context.SaveChanges();
         }

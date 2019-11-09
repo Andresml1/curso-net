@@ -1,0 +1,45 @@
+﻿@page
+@model TGL.WebApp.Pages.Computers.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<a asp-page="./Index" class="btn-floating btn-large waves-effect waves-light">
+    <i class="material-icons">arrow_back</i>
+</a>
+
+
+
+<div class="row">
+    <form class="col s12" method="post">
+        <input hidden asp-for="Computer.Id" />
+        <input hidden asp-for="Computer.StudentId" />
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="name" class="validate" asp-for="Computer.Brand">
+                <label for="name">Brand</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" class="validate" asp-for="Computer.Model">
+                <label for="last_name">Model</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="nit" class="validate" asp-for="Computer.Ram">
+                <label for="nit">Ram</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="age" class="validate" asp-for="Computer.Cpu">
+                <label for="age">Cpu</label>
+            </div>
+        </div>
+        <div class="row">
+
+            <button class="waves-effect waves-light btn col s12 " type="submit"> Save  </button>
+        </div>
+    </form>
+</div>
