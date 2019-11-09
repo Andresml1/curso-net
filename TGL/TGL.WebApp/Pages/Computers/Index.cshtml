@@ -4,19 +4,20 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Computers</h1>
 
-<a asp-page="Add" class="waves-effect waves-light btn">Create new Computer</a>
 
 <form method="post">
     <table>
         <thead>
-            <tr>
+            <tr class="card-panel teal lighten-1">
                 <th>Id</th>
                 <th>Brand</th>
                 <th>Model</th>
                 <th>Cpu</th>
                 <th>Ram</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -50,3 +51,7 @@
         </tbody>
     </table>
 </form>
+<br />
+<a asp-page="Add" class="waves-effect waves-light btn">Create new Computer</a>
+<br />
+<a asp-page="../Students/Index" class="waves-effect waves-light btn"> student list </a>
